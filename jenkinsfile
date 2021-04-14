@@ -87,13 +87,13 @@ pipeline{
                 //sh 'chmod +x change-tag.sh'
                 //sh """./change-tag.sh v${env.BUILD_ID}"""
                //sh 'cat k8s/api-deployment.yaml'
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kube-azure', namespace: '', serverUrl: 'https://game-gibbon-k8s-d5bdbf53.hcp.westus2.azmk8s.io:443') {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kube-azure', namespace: '', serverUrl: 'https://full-serval-k8s-8b076724.hcp.westus2.azmk8s.io:443') {
                                 // some block
                     bat 'kubectl apply -f k8s/database-deployment.yaml'
                     
                 }
                 sleep(120)
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kube-azure', namespace: '', serverUrl: 'https://game-gibbon-k8s-d5bdbf53.hcp.westus2.azmk8s.io:443') {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kube-azure', namespace: '', serverUrl: 'https://full-serval-k8s-8b076724.hcp.westus2.azmk8s.io:443') {
                                 // some block
                     bat 'kubectl apply -f k8s/api-deployment.yaml'
                     bat 'kubectl get pods'
