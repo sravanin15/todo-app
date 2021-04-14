@@ -71,14 +71,14 @@ pipeline{
             steps{
                 
 
-                withCredentials([string(credentialsId: 'dockerpass', variable: 'dockerpwd')]) {
+               withCredentials([string(credentialsId: 'dockerPaswd', variable: 'dockerpwd')]) {
 
                         
-                   bat "docker login -u sreelakshmi14 -p ${dockerpwd}"
+                   bat "docker login -u sravanin15 -p ${dockerpwd}"
 
                 }
-                bat "docker tag todo_app sreelakshmi14/todo-app:latest"
-                bat "docker push sreelakshmi14/todo-app:latest"
+                bat "docker tag todo_app sravanin15/todo-app:latest"
+                bat "docker push sravanin15/todo-app:latest"
 
             }
         }
