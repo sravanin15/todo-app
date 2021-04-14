@@ -5,18 +5,13 @@ pipeline{
        jdk 'jdk'
    }
     stages{
-        stage('Fetch project from github'){
-            steps{
-                git branch: 'master', url: 'https://github.com/sravanin15/todo-app.git'
-            }
-                
-        }
+       /*
         stage('Maven package'){
             steps{
                 bat 'mvn -f app/pom.xml clean package'
 
             }
-        }
+        }*/
         stage('sonar analysis'){
             steps{
                 withSonarQubeEnv('sonarserver'){
