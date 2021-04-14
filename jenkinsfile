@@ -19,7 +19,7 @@ pipeline{
         }
         stage('sonar analysis'){
             steps{
-                withSonarQubeEnv('sonar-server'){
+                withSonarQubeEnv('sonarserver'){
                     bat 'mvn -f app/pom.xml sonar:sonar'
                 }
             }
@@ -32,7 +32,7 @@ pipeline{
                  "files": [
                              {
                                 "pattern": "app/target/*.war",
-                                "target": "art-doc-dev-loc/todo-app/"
+                                "target": "art-doc-dev/todo-app/"
                             }
                         ]
             }''',
@@ -47,7 +47,7 @@ pipeline{
                 spec:"""{
                      "files": [
                                 {
-                                    "pattern": "art-doc-dev-loc/todo-app/**",
+                                    "pattern": "art-doc-dev/todo-app/**",
                                     "target": "app/artifacts/"      
                                 }
                             ]
