@@ -1,13 +1,13 @@
 pipeline{
     agent any;
      tools{
-       maven 'Maven'
+       maven 'maven'
        jdk 'jdk'
    }
     stages{
         stage('Fetch project from github'){
             steps{
-                git branch: 'master', url: 'https://github.com/sreelakshmi665/todo-app.git'
+                git branch: 'master', url: 'https://github.com/sravanin15/todo-app.git'
             }
                 
         }
